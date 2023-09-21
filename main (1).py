@@ -1,22 +1,33 @@
-# Define the base class player 
-class Player:
-  def play(self):
-    print("The player is playing cricket.")
-# Define the derived class Batsman
-class Batsman(Player):
-  def play(self):
-    print("The batsman is batting.")
-# Define the derived class Bowler
-class Bowler(Player):
-  def play(self):
-    print("The bowler is bowling")
-# Create objects of Batsman and Bowler classes
-batsman=Batsman()
-bowler=Bowler()
-# call the play()method for the each object 
-batsman.play()
-bowler.play()
-
-
-
-    
+def CgpaCalc(marks, n):
+ 
+    # Variable to store the grades in
+    # every subject
+    grade = [0] * n
+   
+    # Variables to store CGPA and the
+    # sum of all the grades
+    Sum = 0
+   
+    # Computing the grades
+    for i in range(n):
+       grade[i] = (marks[i] / 10)
+   
+    # Computing the sum of grades
+    for i in range(n):
+       Sum += grade[i]
+   
+    # Computing the CGPA
+    cgpa = Sum / n
+   
+    return cgpa
+   
+# Driver code
+n = 5
+marks = [ 90, 80, 70, 80, 90 ]
+ 
+cgpa = CgpaCalc(marks, n)
+       
+print("CGPA = ", '%.1f' % cgpa)
+print("CGPA Percentage = ", '%.2f' % (cgpa * 9.5))
+ 
+# This code is contributed by divyeshrabadiya07
